@@ -1,0 +1,131 @@
+{
+  "opening_crawl": "A long time ago in a galaxy far, far away...",
+  "game_title": "GALACTIC FATE: PATHS OF THE FORCE!",
+
+   "default_character": {
+    "name": "Loaded Hero",
+    "race": 0,
+    "profession": 1
+  },
+
+  "holoctron_training_rules": [
+    "1. ATTACKING: Damage is (Base Power + Ability) * Dice Roll.",
+    "2. DICE ROLLS: Range from 1 (Miss) to 5 (150% Critical Hit).",
+    "3. SPECIALS: Move 3 requires 2 turns of energy to charge.",
+    "4. VICTORY: Reduced enemy health to 0 to survive.",
+    "5. MORALITY: Sparing enemies (+25 FP) vs. Finishing them (-25 FP)."
+  ],
+  "dice_mechanics": {
+    "1": {"effect": "Miss!", "multiplier": 0.0 },
+    "2": {"effect": "Low Damage!", "multiplier": 0.8 },
+    "3": {"effect": "Neutral Damage!", "multiplier": 0.9 },
+    "4": {"effect": "High Damage!", "multiplier": 1.0 },
+    "5": {"effect": "CRITICAL HIT!", "multiplier": 1.5 }
+  },
+  "character_classes": [
+    {
+      "race": "WOOKIEE",
+      "base_stats": { "hp": 100, "atk": 15, "def": 10, "str_bonus": 20},
+      "moveset": {
+        "jedi": [
+          {"name": "Wookiee Smash", "type": "Physical", "effect": "Standard Damage" },
+          {"name": "Roar Intimidate", "type": "Debuff", "effect": "Lowers Enemy Defense by 5" },
+          {"name": "Ground Slam", "type": "Special", "effect": "Massive damage + Stuns enemy" }
+        ],
+        "sith": [
+          {"name": "Wookiee Smash", "type": "Physical", "effect": "Standard Damage" },
+          {"name": "Roar Intimidate", "type": "Debuff", "effect": "Lowers Enemy Defense by 5" },
+          {"name": "Berserker Rage", "type": "Special", "effect": "+10 ATK self-buff + Attack"}
+        ]
+      }
+    },
+    {
+      "race": "HUMAN",
+      "base_stats": { "hp": 100, "atk": 10, "def": 10, "force_sens": 15},
+      "moveset": {
+        "jedi": [
+          {"name": "Lightsaber Strike", "type": "Physical", "effect": "Standard Damage" },
+          {"name": "Force Push", "type": "Utility", "effect": "Staggers enemy (Skip Turn)" },
+          {"name": "Assured Strike", "type": "Special", "effect": "Unblockable hit + Lowers Enemy Defense" }
+        ],
+        "sith": [
+          {"name": "Lightsaber Strike", "type": "Physical", "effect": "Standard Damage" },
+          {"name": "Force Push", "type": "Utility", "effect": "Staggers enemy (Skip Turn)" },
+          {"name": "Force Lightning", "type": "Special", "effect": "Damage + Paralyze (Skip Turn)"}
+        ]
+      }
+    },
+    {
+      "race": "ANDROID",
+      "base_stats": { "hp": 100, "atk": 8, "def": 15, "tech_bonus": 25},
+      "moveset": {
+        "jedi": [
+          {"name": "Blaster Shot", "type": "Physical", "effect": "Standard Damage" },
+          {"name": "Energy Shield", "type": "Buff", "effect": "+10 DEF self-buff" },
+          {"name": "Assured Strike", "type": "Special", "effect": "Double-attack + Lowers Enemy Attack" }
+        ],
+        "sith": [
+          {"name": "Blaster Shot", "type": "Physical", "effect": "Standard Damage" },
+          {"name": "Energy Shield", "type": "Buff", "effect": "+10 DEF self-buff" },
+          {"name": "Assured Strike", "type": "Special", "effect": "Double-attack + Lowers Enemy Defense by 5" }
+          ]
+      }
+    }
+  ],
+  "galaxy_episodes": [
+    {
+      "episode": "EPISODE I: THE FIRST TRIAL",
+      "planet": "Planet Tatooine (The Outer Rim)",
+      "intel": "A harsh desert planet.",
+      "mission": "Face your first trial.",
+      "enemy": "Tusken Raider"
+    },
+    {
+      "episode": "EPISODE II: FINAL CONFLICT",
+      "planet": "Planet Coruscant (The Core)",
+      "intel": "The urban center.",
+      "mission": "Defeat the Inquisitor.",
+      "enemy": "Imperial Inquisitor"
+    },
+    {
+    "episode": "EPISODE III: FINAL CONFLICT",
+    "planet": "Planet Coruscant (The Core)",
+    "intel": "The urban center of the galaxy.",
+    "mission": "Defeat the Inquisitor and decide the future of the galaxy.",
+    "enemy": "Imperial Inquisitor"
+  }
+  ],
+  "boss_mechanics": {
+    "Obi-Wan Kenobi": {
+      "trigger": "Force Points <=0",
+      "stats": { "hp": 200, "atk": 18, "def": 12 },
+      "intro": "I will do what I must.",
+      "signature_move": "Soresu Strike",
+      "moment_of_destiny": {
+        "dialogue": "It's over! I have the high ground!",
+        "choice_light": "Obi-Wan, forgive me... (Return to Light)",
+        "choice_dark": "I HATE YOU! (+50 HP, +10 ATK)"
+    }
+  },
+    "Darth_Vader": {
+      "trigger": "Force Points >= 100",
+      "stats": {
+        "hp": 200,
+        "atk": 18,
+        "def": 12
+      },
+      "intro": "The Force is with you...",
+      "signature_move": "Force Crush",
+      "moment_of_destiny": {
+        "dialogue": "Join me, and together we can rule the galaxy as father and son!",
+        "choice_light": "I am a Jedi, like my father before me! (+50 HP, +10 DEF)",
+        "choice_dark": "I will join you, Master. (Fall to Darkness)"
+      }
+    }
+  },
+  "endings":{
+    "Republic_Restored": ">= 75 FP",
+    "Galactic_Empire": "<= 25 FP",
+    "Gray_Jedi": "== 50 FP"
+  }
+}

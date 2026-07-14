@@ -1,0 +1,10 @@
+build/
+*.o
+*.out
+*.exe
+*.log
+.DS_Store
+.vscode/
+.idea/
+battle
+game
