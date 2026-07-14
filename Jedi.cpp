@@ -78,8 +78,8 @@ void Jedi::performAction(PlayerCharacter* enemy) {
         if (choice == 3) {
             if (moveCount >= 2) {
                 std::cout << name << " uses [ASSURED STRIKE]! Enemy defense fell!" << std::endl;
-                enemy->setDefense(enemy->getDefense()); // Lower Defense
-                enemy->takeDamage(dealDamage()); // Attacks
+                enemy->setDefense(enemy->getDefense() - 5); // Lower Defense
+                enemy->takeDamage(basePower); // Guaranteed hit
             }
             else {
                 std::cout << "\nSpecial not ready! (Requires 2 turns of combat first)" << std::endl;
